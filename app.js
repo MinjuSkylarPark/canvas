@@ -9,24 +9,20 @@ const context = canvas.getContext("2d")
 canvas.width=800;
 canvas.height=800;
 
-// 여기다가는 집짓기를 할건데 천장하고 문짝을 만들어보자 
-// 이제 여기에 문짝을 하나 만들어보자 
-context.fillRect(200,200,50,200);
-context.fillRect(400,200,50,200)
-// 여기서 linewidth는 지붕과 문에 적용된다 
-context.lineWidth = 3
+// 자 이제 사람몸뜡이를 만들어 보자
+//팔1 200/200= xy축으로부터 길이 /15 굵기/ 100 길이
+context.fillRect(230,200,15,100)
+//팔2
+context.fillRect(333,200,15,100)
+//몸통-상체
+context.fillRect(260,200,60,200)
 
-// 문짝
-context.fillRect(300,300,50,100)
-//지붕
-context.fillRect(200,200,200,10)
-// 이제 우리의 연필은 xy축에서 200 200씩 떨어진 지점에 있을 것이다 
-context.moveTo(200,200)
-//그리고 이제 우린 여기에 엄청 높은지붕을 만들것이다 
-// x y축과 적절하게 떨어진 지점을 계산해서 지붕을 만들었다
-context.lineTo(325,100);
-context.lineTo(450,200)
-//엄청 강력한 집이가 생성되었다 뙇 
-context.fill();
-
-
+// 50 50은 x축 y축 20은 대가리..사람머리의 반지름 
+//작은 머리통을 만들어보자
+//arc은 원을 만드는 공식같은 것이다  
+//0은 원의 starting angle 2*Math.PI는 원을 끝내는 angle인 것이다 
+// 2 *Math.PI는 완벽한 원을 만드는 공식같은 것인데
+//이런원들 덕분에 우리는 완벽한 원을 만드는 것에 집착할 필요가 없다
+//2->1.5로 바꾸면 누가 조각낸 원같이 생겨버리게된다,,
+context.arc(290,150,35,0, 2*Math.PI);
+context.fill()
