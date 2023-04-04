@@ -24,5 +24,13 @@ context.fillRect(260,200,60,200)
 // 2 *Math.PI는 완벽한 원을 만드는 공식같은 것인데
 //이런원들 덕분에 우리는 완벽한 원을 만드는 것에 집착할 필요가 없다
 //2->1.5로 바꾸면 누가 조각낸 원같이 생겨버리게된다,,
-context.arc(290,150,35,0, 2*Math.PI);
+context.arc(290,160,35,0, 2*Math.PI);
 context.fill()
+
+//사람의 눈알을 만들어볼것이다
+context.beginPath();
+context.fillStyle="white"
+context.arc(270,155,5,0,2*Math.PI)
+context.arc(310,155,5,0,2*Math.PI)
+context.fill()
+
