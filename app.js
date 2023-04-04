@@ -17,8 +17,8 @@ context.fillRect(400,200,50,200)
 context.lineWidth = 3
 
 // 문짝
-context.strokeRect(300,300,50,100)
-
+context.fillRect(300,300,50,100)
+//지붕
 context.fillRect(200,200,200,10)
 // 이제 우리의 연필은 xy축에서 200 200씩 떨어진 지점에 있을 것이다 
 context.moveTo(200,200)
@@ -26,6 +26,7 @@ context.moveTo(200,200)
 // x y축과 적절하게 떨어진 지점을 계산해서 지붕을 만들었다
 context.lineTo(325,100);
 context.lineTo(450,200)
-context.stroke();
+//엄청 강력한 집이가 생성되었다 뙇 
+context.fill();
 
 
