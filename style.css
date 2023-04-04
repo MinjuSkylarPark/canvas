@@ -1,3 +1,13 @@
+/* canvas를 만드는 것의 기본틀  */
+
 body {
-  background-color: turquoise;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+canvas {
+  width: 800px;
+  height: 800px;
+  border: 1px solid black;
 }
