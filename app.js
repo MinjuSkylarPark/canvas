@@ -9,12 +9,23 @@ const context = canvas.getContext("2d")
 canvas.width=800;
 canvas.height=800;
 
-//캔버스위에서 움직일 페인팅브러쉬를 만들어줄 것이다 
-//x y로부터 페인팅브러쉬를 움직여 캔버스위에 선을 긋는 것이다 
-context.moveTo(50,50)
-// x좌표로부터 150떨어진지점으로 이동하고 y축은 그대로 두어 선을 그려보자 
-context.lineTo(150,50)
-context.stroke();
+// 여기다가는 집짓기를 할건데 천장하고 문짝을 만들어보자 
+// 이제 여기에 문짝을 하나 만들어보자 
+context.fillRect(200,200,50,200);
+context.fillRect(400,200,50,200)
+// 여기서 linewidth는 지붕과 문에 적용된다 
+context.lineWidth = 3
 
+// 문짝
+context.strokeRect(300,300,50,100)
+
+context.fillRect(200,200,200,10)
+// 이제 우리의 연필은 xy축에서 200 200씩 떨어진 지점에 있을 것이다 
+context.moveTo(200,200)
+//그리고 이제 우린 여기에 엄청 높은지붕을 만들것이다 
+// x y축과 적절하게 떨어진 지점을 계산해서 지붕을 만들었다
+context.lineTo(325,100);
+context.lineTo(450,200)
+context.stroke();
 
 
