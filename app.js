@@ -6,27 +6,29 @@ canvas.width=800;
 canvas.height=800;
 
 context.lineWidth=2
+let isPainting = false;
 
-const colors = [
-    "#ff3838",
-    "#ffb8b8",
-    "#c56cf0",
-    "#ff9f1a",
-    "#fff200",
-    "#32ff7e",
-    "#7efff5",
-    "#7d5fff"
-]
-
-
-function onClick(event){
-     context.beginPath();
-     context.moveTo(10,10)
-    //  상단에서 지정해준 컬러색깔을 무작위로 뽑아낸다음 Math.floor로 묶어 반올림시켬
-     const color = colors[Math.floor(Math.random()*colors.length)]
-     context.strokeStyle= color;
-     context.lineTo(event.offsetX, event.offsetY)
-     context.stroke();
+function Moveto(event){
+    if(isPainting){
+        context.lineTo(event.offsetX, event.offsetY);
+        context.stroke();
+        return;   
+    }
+    //유저가 마우스를 캔버스에 올리면 자스는 곧장 마우스가 있는 곳으로 브러쉬를 옮긴다 
+    context.moveTo(event.offsetX,event.offsetY)
 }
-canvas.addEventListener("mousemove",onClick)
 
+//유저가 마우스를 움직이고 isPainting이 True일 때 그리도록 한다 
+function Mdown(){
+    isPainting = true
+}
+
+//isPainting이 false이면 캔버스에서 연필을 움직이기만할거고 
+//여기서 트랙패드에서 손가락 왔다갔다 - 클릭감지 구분한단거 
+function Mup(){
+    isPainting = false
+}
+
+canvas.addEventListener("mousemove",Moveto)
+canvas.addEventListener("mousedown",Mdown)
+canvas.addEventListener("mouseup",Mup)
