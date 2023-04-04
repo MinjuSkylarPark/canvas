@@ -23,14 +23,18 @@ context.fillRect(260,200,60,200)
 //0은 원의 starting angle 2*Math.PI는 원을 끝내는 angle인 것이다 
 // 2 *Math.PI는 완벽한 원을 만드는 공식같은 것인데
 //이런원들 덕분에 우리는 완벽한 원을 만드는 것에 집착할 필요가 없다
-//2->1.5로 바꾸면 누가 조각낸 원같이 생겨버리게된다,,
+//2->1.5로 바꾸면 누가 조각낸 원같이 생겨버 리게된다,,
 context.arc(290,160,35,0, 2*Math.PI);
 context.fill()
 
 //사람의 눈알을 만들어볼것이다
+//beginPath를 여기에 쓰는 이유는 안쓰면 원찌그러지고 난리나기때문에
+//경로를 새로 설정해줘야 눈이 제대로된곳에 위치하게된다 
+
 context.beginPath();
 context.fillStyle="white"
-context.arc(270,155,5,0,2*Math.PI)
-context.arc(310,155,5,0,2*Math.PI)
+// x y = 270 155 / 5 = 눈알크기 / 0 = 눈알모양 / 2*Math.PI 동그란 모양만드는식 
+context.arc(270,155,10,1*Math.PI,2*Math.PI)
+context.arc(310,155,10,1*Math.PI,2*Math.PI)
 context.fill()
 
